@@ -195,6 +195,42 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                               ChatBot config
                             </Link>
                           </li>
+
+                          <li>
+                            <Link
+                              href="/admin/events"
+                              className={`group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white ${
+                                pathname === "/admin/chat-resources" &&
+                                "text-white"
+                              }`}
+                            >
+                              Events
+                            </Link>
+                          </li>
+
+                          <li>
+                            <Link
+                              href="/admin/courses"
+                              className={`group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white ${
+                                pathname === "/admin/chat-resources" &&
+                                "text-white"
+                              }`}
+                            >
+                              Courses
+                            </Link>
+                          </li>
+
+                          <li>
+                            <Link
+                              href="/admin/certificates"
+                              className={`group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white ${
+                                pathname === "/admin/chat-resources" &&
+                                "text-white"
+                              }`}
+                            >
+                              Certificates
+                            </Link>
+                          </li>
                         </ul>
                       </div>
                       {/* <!-- Dropdown Menu End --> */}
