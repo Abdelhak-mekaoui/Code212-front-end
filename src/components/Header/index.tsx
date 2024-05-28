@@ -133,10 +133,9 @@ const Header = (props: {
             {/* </button> */}
             <Link
               href="/chat"
-              className={`group relative flex items-center gap-2.5 rounded-full px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white ${
-                pathname === "/chat" && "text-white"
-              }`}
+              className="relative flex h-8.5 w-8.5 items-center justify-center rounded-full border-[0.5px] border-stroke bg-gray hover:text-primary dark:border-strokedark dark:bg-meta-4 dark:text-white"
             >
+              <span className="absolute -right-0.5 -top-0.5 z-1 inline h-2 w-2 rounded-full bg-meta-1"></span>
               <TbMessageChatbot width={10} height={6} />
             </Link>
           </ul>

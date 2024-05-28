@@ -9,6 +9,7 @@ const brandData: BRAND[] = [
     revenues: "5,768",
     sales: 590,
     conversion: 4.8,
+    invoiceDate: `Jan 13,2023`,
   },
   {
     logo: "/images/brand/brand-02.svg",
@@ -17,6 +18,7 @@ const brandData: BRAND[] = [
     revenues: "4,635",
     sales: 467,
     conversion: 4.3,
+    invoiceDate: `Jan 13,2023`
   },
   {
     logo: "/images/brand/brand-03.svg",
@@ -25,6 +27,7 @@ const brandData: BRAND[] = [
     revenues: "4,290",
     sales: 420,
     conversion: 3.7,
+    invoiceDate: `Jan 13,2023`
   },
   {
     logo: "/images/brand/brand-04.svg",
@@ -33,6 +36,7 @@ const brandData: BRAND[] = [
     revenues: "3,580",
     sales: 389,
     conversion: 2.5,
+    invoiceDate: `Jan 13,2023`
   },
   {
     logo: "/images/brand/brand-05.svg",
@@ -41,6 +45,7 @@ const brandData: BRAND[] = [
     revenues: "6,768",
     sales: 390,
     conversion: 4.2,
+    invoiceDate: `Jan 13,2023`
   },
 ];
 
@@ -48,7 +53,7 @@ const TableOne = () => {
   return (
     <div className="rounded-sm border border-stroke bg-white px-5 pb-2.5 pt-6 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:pb-1">
       <h4 className="mb-6 text-xl font-semibold text-black dark:text-white">
-        Top Channels
+        Up comming certificates
       </h4>
 
       <div className="flex flex-col">
@@ -60,12 +65,12 @@ const TableOne = () => {
           </div>
           <div className="p-2.5 text-center xl:p-5">
             <h5 className="text-sm font-medium uppercase xsm:text-base">
-              Visitors
+              End date
             </h5>
           </div>
           <div className="p-2.5 text-center xl:p-5">
             <h5 className="text-sm font-medium uppercase xsm:text-base">
-              Revenues
+              Real price
             </h5>
           </div>
           <div className="hidden p-2.5 text-center sm:block xl:p-5">
@@ -98,8 +103,10 @@ const TableOne = () => {
               </p>
             </div>
 
-            <div className="flex items-center justify-center p-2.5 xl:p-5">
-              <p className="text-black dark:text-white">{brand.visitors}K</p>
+            <div className="border-b flex items-center justify-center dark:border-strokedark">
+                  <p className="text-black dark:text-white">
+                    {brand.invoiceDate}
+                  </p>
             </div>
 
             <div className="flex items-center justify-center p-2.5 xl:p-5">

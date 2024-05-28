@@ -2,6 +2,9 @@
 import React, { useState } from "react";
 import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
 import DefaultLayout from "@/components/Layouts/DefaultLayout";
+import { VscRobot } from "react-icons/vsc";
+import { useSession } from "next-auth/react";
+import { VscSend } from "react-icons/vsc";
 
 interface Message {
   sender: string;
@@ -12,6 +15,7 @@ interface Message {
 const Chat = () => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [inputMessage, setInputMessage] = useState<string>("");
+  const session = useSession();
 
   const sendMessage = async () => {
     if (inputMessage.trim() === "") return;
@@ -56,20 +60,22 @@ const Chat = () => {
 
   return (
     <DefaultLayout>
-      <Breadcrumb pageName="Chatbot" />
+      <Breadcrumb pageName="Code-212 Assistant" />
       <div className="mx-auto max-w-[60rem] px-6">
-        <div className=" mb-2 h-full min-h-[60vh]">
-          <div className="mb-4 h-100 overflow-y-auto rounded-md border border-stroke bg-white px-7.5 py-4 shadow-default dark:border-strokedark dark:bg-boxdark ">
+        <div className=" mb-2 h-full min-h-[70vh]">
+          <div className="mb-4 h-full min-h-[65vh] overflow-y-auto rounded-md border border-stroke bg-white px-7.5 py-4 shadow-default dark:border-strokedark dark:bg-boxdark ">
             {messages.map((message, index) => (
               <div
                 key={index}
-                className={`mb-2 rounded-md p-2 px-4 ${
+                className={`mb-2 rounded-2xl p-2 px-4 ${
                   message.sender === "You"
-                    ? "self-end bg-primary text-white"
-                    : "self-start bg-secondary text-white"
+                    ? "ml-24 self-end bg-primary text-white lg:ml-[30%]"
+                    : "mr-24 self-start bg-secondary text-white lg:mr-[30%]"
                 }`}
               >
-                <div className="m-l mb-2 text-xs">{message.sender}</div>
+                <div className="m-l mb-2 text-md font-bold">
+                  {message.sender !== "You" ? <VscRobot /> : session.data?.user.name}
+                </div>
                 <div className="text-l">{message.message}</div>
                 <div className="mt-1 text-right text-xs">{message.time}</div>
               </div>
@@ -86,9 +92,9 @@ const Chat = () => {
             />
             <button
               onClick={sendMessage}
-              className="inline-flex items-center justify-center rounded-md bg-meta-3 px-10 py-4 text-center font-medium text-white hover:bg-opacity-90 lg:px-8 xl:px-10"
+              className="inline-flex items-center justify-center rounded-md bg-meta-3 px-10 py-4 text-center font-extrabold text-white text-2xl hover:bg-opacity-90 lg:px-8 xl:px-10"
             >
-              Send
+              <VscSend />
             </button>
           </div>
         </div>
